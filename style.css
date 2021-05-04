@@ -1,0 +1,309 @@
+/*
+This is a good layout for a mobile-first CSS template.
+Following this flow will minimize the number of styles you need to write and will ensure you are thinking, designing and developing mobile-first.
+Most of your styles get written like standard CSS, but for your mobile presentation. Generally speaking, a good mobile presention will stretch out nicely for larger screens.
+
+Sometimes, when we stretch out to larger screens, we need to make minor tweaks for the larger devices -- you can make these tweaks in the tablet media query, or if the issue exists on desktop only, the desktop media query.
+You will find this is far easier than the opposite task of using CSS to cram your desktop experience into a mobile device.
+*/
+/*********************************************************************
+ LOADS IN A NICE RESET TO ENSURE ALL BROWSERS HAVE THE SAME BASE STYLES
+*********************************************************************/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css');
+
+/*********************************************************************
+  YOUR MOBILE/BASE STYLES GO HERE
+*********************************************************************/
+/** SET BORDER BOX EVERYWHERE */
+* {
+    box-sizing: border-box;
+}
+
+/** APPLY BASE TAG STYLES */
+body,
+html {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+    font-size: 16px;
+    font-family: 'EB Garamond', serif;
+}
+
+/** RESPONSIVE IMAGES */
+figure,
+img {
+    /* Sets image width to match parent */
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+header {
+    margin-bottom: 16px;
+}
+
+header p {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.flex.filter div {
+    flex-basis: 100%;
+}
+
+.flex .item {
+    flex-basis: 48%;
+    display: none;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.flex .item.active {
+    display: block;
+}
+
+/** Caption styles */
+.caption,
+figcaption {
+    font-size: 0.9rem;
+    color: #8e8a8a;
+    padding: 5px 0;
+    text-align: center;
+}
+
+/** BASE CLASSES */
+.annotate {
+    position: relative;
+}
+
+.annotate .dot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ce1256;
+    color: #525252;
+}
+
+.annotate .dot .inner {
+    position: absolute;
+    opacity: 0;
+    padding: 22px;
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.annotate .dot .close {
+    position: absolute;
+    color: #000000;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    text-decoration: none;
+    opacity: 0;
+}
+
+.annotate .dot>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+}
+
+.annotate .dot.east {
+    background-color: #f0f0f0;
+    opacity: 90%;
+}
+
+.annotate .dot.build {
+    background-color: #f0f0f0;
+    opacity: 90%;
+    color: #FFF;
+}
+
+.annotate .dot.un {
+    background-color: #f0f0f0;
+    opacity: 90%;
+}
+
+.annotate .dot.drive {
+    background-color: #f0f0f0;
+    opacity: 90%;
+}
+
+.annotate .dot.sky {
+    background-color: #f0f0f0;
+    opacity: 90%;
+}
+
+.annotate .dot.active {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    border: 0;
+    z-index: 2;
+}
+
+.annotate .dot.active .inner {
+    overflow: scroll;
+    height: 100%;
+}
+
+.annotate .dot.active .inner,
+.annotate .dot.active .close,
+.annotate .dot.active>img {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/** transportation annotations */
+#bikes:not(.active) {
+    top: 15%;
+    left: 32%;
+}
+
+#ferry:not(.active) {
+    bottom: 19%;
+    left: 20%;
+}
+
+#walks:not(.active) {
+    top: 45%;
+    left: 4%;
+}
+
+/** culture annotations */
+#museums:not(.active) {
+    top: 15%;
+    left: 32%;
+}
+
+#parks:not(.active) {
+    bottom: 19%;
+    left: 20%;
+}
+
+#performances:not(.active) {
+    top: 40%;
+    right: 39%;
+}
+
+/** food annotations */
+#outdoordining:not(.active) {
+    top: 15%;
+    left: 32%;
+}
+
+#markets:not(.active) {
+    bottom: 19%;
+    left: 20%;
+}
+
+#old-buildings:not(.active) {
+    top: 40%;
+    right: 39%;
+}
+
+.collage {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.collage .img {
+    flex-basis: 50%;
+    padding: 2.5px;
+}
+
+.collage .img:nth-child(odd) {
+    padding-left: 0;
+}
+
+.collage .img:nth-child(even) {
+    padding-right: 0;
+}
+
+/** Container styles to keep content from becoming too wide or coming too close to
+* mobile edge */
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+/** Images are allowed to be a little wider when broken out into their own container */
+.container.image {
+    max-width: 900px;
+    padding: 0;
+}
+
+.container.image .caption,
+.container.image figcaption {
+    padding: 5px 10px;
+}
+
+/*********************************************************************
+  YOUR TABLET/DESKTOP STYLES GO HERE
+*********************************************************************/
+@media(min-width: 681px) {
+
+    /* Any adjustments for tablets and larger go here.
+    Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+    .annotate .dot .inner {
+        padding: 22px 75px;
+        font-size: 1.1em;
+    }
+
+    .annotate .dot.active .inner {
+        height: auto;
+        overflow: auto;
+    }
+}
+
+/*********************************************************************
+  YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 769px) {
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 769px or larger -- so desktop */
+}
+
+/*********************************************************************
+  YOUR MEDIUM-DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 805px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 769px or larger -- so desktop */
+    .container {
+        padding: 0;
+    }
+}
+
+/*********************************************************************
+  YOUR LARGE DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 1205px) {
+
+    /* Any adjustments for desktop and larger go here.
+    Note these styles will be applied to anything 769px or larger -- so desktop */
+    .container.image .caption,
+    .container.image figcaption {
+        padding: 5px 0;
+    }
+}
