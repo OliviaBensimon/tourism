@@ -19,20 +19,28 @@ document.addEventListener("DOMContentLoaded", function (e) {
 	/**
 	 * Capture all filters into a NodeList
 	 */
-	const filter_dropdowns = document.querySelectorAll("select.filter");
+	const filter_dropdown = document.querySelector("#party");
 
 	/**
 	 * Listen to each filter dropdown for a change and fire the filter function
 	 */
-	filter_dropdowns.forEach(function (filter_dropdown) {
-		filter_dropdown.addEventListener("change", function (e) {
-			/**
-			 * on change, run the filter_movies function
-			 * which will re-evaluate all three dropdown selections and generate
-			 * a fresh selector for the filters
-			 */
-			filter_tourism();
+
+	filter_dropdown.addEventListener("change", function (e) {
+		/**
+		 * on change, run the filter_movies function
+		 * which will re-evaluate all three dropdown selections and generate
+		 * a fresh selector for the filters
+		 */
+		const value = e.target.value;
+		const active_images = document.querySelectorAll(".food.active, .transportation.active, .culture.active");
+
+		active_images.forEach(function (image) {
+			image.classList.remove("active");
 		});
+
+		const show_image = document.querySelector(`.${value}`);
+
+		show_image.classList.add("active");
 	});
 });
 
@@ -60,7 +68,8 @@ function filter_tourism() {
 	/**
 	 * Show items that match the dropdowns
 	 */
-	const filtered_items = document.querySelectorAll(`.item.${transportation_class}.${culture_class}.${food_class}`);
+	const filtered_items = document.querySelectorAll(`.item.$ { transportation_class }.$ { culture_class }.$ { food_class }
+								`);
 
 	filtered_items.forEach(function (item) {
 		item.classList.add("active");
