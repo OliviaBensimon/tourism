@@ -24,7 +24,8 @@ body,
 html {
     /* Sets default font-size to 16px, ensuring 1em = 16px; */
     font-size: 16px;
-    font-family: 'EB Garamond', serif;
+    background-color: #F7F9FB;
+}
 }
 
 /** RESPONSIVE IMAGES */
@@ -33,11 +34,55 @@ img {
     /* Sets image width to match parent */
     width: 100%;
     display: block;
-    margin: 0 auto;
+}
+
+span {
+    float: left;
+    line-height: 85%;
+    width: .7em;
+    font-size: 400%;
+    font-family: 'Open Sans';
+}
+
+h1 {
+    font-family: 'Playfair Display';
+    color: #687864;
+    font-size: 4em;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+h2 {
+    font-family: 'Open Sans';
+    color: #5085A5;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+h3 {
+    font-family: 'Open Sans';
+    font-size: 1em;
+    color: #31708E;
 }
 
 p {
-    line-height: 1.5em;
+    font-family: 'Open Sans';
+    color: #31708E;
+    font-size: 1.5em;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    box-shadow: inset 0 -2px 0 rgba(50, 85, 127, 0.5), 0 2px 0 rgba(50, 85, 127, 0.5);
+    transition: box-shadow .3s;
+    color: inherit;
+    overflow: hidden;
+}
+
+a:hover {
+    box-shadow: inset 0 -30px 0 rgba(50, 85, 127, 0.5), 0 2px 0 rgba(50, 85, 127, 0.5);
 }
 
 header {
@@ -188,18 +233,18 @@ figcaption {
 
 /** transportation annotations */
 #bikes:not(.active) {
-    top: 16%;
-    left: 29%;
+    top: 41%;
+    left: 36%;
 }
 
 #ferry:not(.active) {
-    bottom: 19%;
-    left: 20%;
+    bottom: 21%;
+    left: 21%;
 }
 
 #walks:not(.active) {
-    top: 45%;
-    left: 4%;
+    top: 15%;
+    left: 38%;
 }
 
 /** culture annotations */
@@ -289,6 +334,20 @@ figcaption {
         height: auto;
         overflow: auto;
     }
+}
+
+h1 {
+    font-family: 'Playfair Display';
+    color: #687864;
+    font-size: 6em;
+}
+}
+
+figure,
+img {
+    /* Sets image width to match parent */
+    width: 100%;
+    display: block;
 }
 
 /*********************************************************************
