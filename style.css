@@ -47,7 +47,7 @@ span {
 h1 {
     font-family: 'Playfair Display';
     color: #687864;
-    font-size: 4em;
+    font-size: 3em;
     margin-top: -15px;
     margin-bottom: -15px;
 }
@@ -61,8 +61,19 @@ h2 {
 
 h3 {
     font-family: 'Open Sans';
-    font-size: 1em;
-    color: #31708E;
+    font-weight: lighter;
+    font-style: italic;
+    color: #162933;
+    font-size: 16px;
+}
+
+.heading h4 {
+    display: inline;
+    font-size: 2.3em;
+    -webkit-text-stroke: 1px #687864;
+    -webkit-text-fill-color: #F7F9FB;
+    font-weight: 800;
+    font-family: "Open Sans";
 }
 
 p {
@@ -116,12 +127,54 @@ header p {
 }
 
 /** Caption styles */
-.caption,
-figcaption {
-    font-size: 0.9rem;
-    color: #8e8a8a;
-    padding: 5px 0;
-    text-align: center;
+.caption {
+    font-family: serif;
+    font-weight: lighter;
+    font-size: 12px;
+    line-height: 10px;
+    color: #162933;
+    margin-top: 0;
+}
+
+.caption a {
+    font-family: serif;
+    font-weight: lighter;
+    font-size: 12px;
+    line-height: 10px;
+    color: #ccc;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+​ .caption a:hover {
+    opacity: 0.6;
+}
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.footer a {
+    font-family: serif;
+    font-weight: lighter;
+    font-style: italic;
+    color: #162933;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+​ .footer a:hover {
+    opacity: 0.6;
+}
+
+​ .footer p {
+    font-family: serif;
+    font-weight: lighter;
+    font-style: italic;
+    color: #162933;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 /** BASE CLASSES */
@@ -143,7 +196,7 @@ figcaption {
     position: absolute;
     opacity: 0;
     padding: 22px;
-    font-size: 0.8em;
+    font-size: 0.7em;
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
@@ -194,7 +247,7 @@ figcaption {
 }
 
 .annotate .dot.active {
-    width: 100%;
+    width: 900px;
     height: 100%;
     left: 0;
     top: 0;
@@ -250,28 +303,23 @@ figcaption {
 /** culture annotations */
 #museums:not(.active) {
     top: 28%;
-    left: 30%;
+    left: 32%;
 }
 
 #performances:not(.active) {
     top: 47%;
-    left: 33%;
+    left: 36%;
 }
 
 /** food annotations */
 #outdoordining:not(.active) {
-    top: 15%;
-    left: 32%;
+    top: 45%;
+    left: 24%;
 }
 
 #markets:not(.active) {
-    bottom: 19%;
-    left: 20%;
-}
-
-#old-buildings:not(.active) {
-    top: 40%;
-    right: 39%;
+    top: 44%;
+    right: 37%;
 }
 
 .collage {
@@ -304,7 +352,7 @@ figcaption {
 
 /** Images are allowed to be a little wider when broken out into their own container */
 .container.image {
-    max-width: 900px;
+    max-width: 850px;
     padding: 0;
 }
 
@@ -334,7 +382,7 @@ figcaption {
 h1 {
     font-family: 'Playfair Display';
     color: #687864;
-    font-size: 6em;
+    font-size: 5.5em;
 }
 }
 
