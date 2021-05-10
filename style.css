@@ -36,6 +36,11 @@ img {
     display: block;
 }
 
+.container.photo {
+    max-width: 1200px;
+    padding: 0;
+}
+
 span {
     float: left;
     line-height: 85%;
