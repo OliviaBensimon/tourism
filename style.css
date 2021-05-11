@@ -410,6 +410,16 @@ img {
     top: 47%;
     left: 34%;
 }
+
+#outdoordining:not(.active) {
+    top: 45%;
+    left: 24%;
+}
+
+#markets:not(.active) {
+    top: 43%;
+    right: 40%;
+}
 }
 
 /*********************************************************************
